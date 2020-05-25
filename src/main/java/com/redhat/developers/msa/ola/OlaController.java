@@ -48,14 +48,7 @@ public class OlaController {
         return String.format("Olá de %s", hostname);
     }
 
-    @CrossOrigin
-    @RequestMapping(method = RequestMethod.GET, value = "/ola-chaining", produces = "application/json")
-    @ApiOperation("Returns the greeting plus the next service in the chain")
-    public List<String> sayHelloChaining() {
-        List<String> greetings = new ArrayList<>();
-        greetings.add(ola());
-        return greetings;
-    }
+  
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/ola-secured", produces = "text/plain")
@@ -74,9 +67,5 @@ public class OlaController {
         return "Logged out";
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/health")
-    @ApiOperation("Used to verify the health of the service")
-    public String health() {
-        return "I'm ok";
-    }
+  
 }
