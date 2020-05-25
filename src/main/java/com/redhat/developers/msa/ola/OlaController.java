@@ -39,8 +39,6 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("/api")
 public class OlaController {
 
-    @Autowired
-    private HolaService holaService;
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/ola", produces = "text/plain")
@@ -56,7 +54,6 @@ public class OlaController {
     public List<String> sayHelloChaining() {
         List<String> greetings = new ArrayList<>();
         greetings.add(ola());
-        greetings.addAll(holaService.hola());
         return greetings;
     }
 
