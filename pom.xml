@@ -118,30 +118,7 @@
 			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>fabric8-maven-plugin</artifactId>
-				<version>3.5.30</version>
-				<configuration>
-					<resources>
-						<labels>
-							<all>
-								<property>
-									<name>app</name>
-									<value>ola</value>
-								</property>
-								<property>
-									<name>hystrix.enabled</name>
-									<value>true</value>
-								</property>
-							</all>
-						</labels>
-					</resources>
-					<enricher>
-						<config>
-							<spring-boot-health-check>
-								<port>4444</port>
-							</spring-boot-health-check>
-						</config>
-					</enricher>
-				</configuration>
+				<version>3.5.30</version>				
 				<executions>
 					<execution>
 						<id>fmp</id>
