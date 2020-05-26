@@ -29,7 +29,7 @@ import org.springframework.stereotype.Component;
 
 @Path("/api")
 @Component
-public class OlaController {
+public class OlaResource {
 
 
     @Value("${com.redhat.developers.msa.ola.loc:true}")
@@ -40,7 +40,7 @@ public class OlaController {
     private HttpServletRequest servletRequest;
     
     @GET
-    @Path("/bonjour")
+    @Path("/ola")
     @Produces(MediaType.TEXT_PLAIN)
     public String ola() {
     	if (loc) {
