@@ -16,14 +16,19 @@
  */
 package com.redhat.developers.msa.ola;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
+
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Component;
 
 
-@RestController
-@RequestMapping("/api")
+@Path("/api")
+@Component
 public class OlaController {
 
 
@@ -31,16 +36,20 @@ public class OlaController {
     private boolean loc;
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/ola", produces = "text/plain")
+    @Context
+    private HttpServletRequest servletRequest;
+    
+    @GET
+    @Path("/bonjour")
+    @Produces(MediaType.TEXT_PLAIN)
     public String ola() {
     	if (loc) {
-            String hostname = System.getenv().getOrDefault("HOSTNAME", "Unknown");
+            String hostname = servletRequest.getServerName();
             return String.format("Olá de %s", hostname);
     	}else {
     		return "ola";
     	}
     	
     }
-
   
 }

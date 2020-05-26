@@ -18,6 +18,11 @@ package com.redhat.developers.msa.ola;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
+import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 
 
 @SpringBootApplication
@@ -25,6 +30,13 @@ public class OlaApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(OlaApplication.class, args);
+    }
+    
+    @Bean
+    public JacksonJsonProvider jsonProvider(ObjectMapper objectMapper) {
+        JacksonJaxbJsonProvider provider = new JacksonJaxbJsonProvider();
+        provider.setMapper(objectMapper);
+        return provider;
     }
 
 }

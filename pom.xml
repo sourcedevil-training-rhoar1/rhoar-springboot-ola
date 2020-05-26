@@ -47,6 +47,10 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
 			<exclusions>
@@ -77,24 +81,24 @@
 			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>fabric8-maven-plugin</artifactId>
-                <version>${version.fabric8.plugin}</version>				
-					<executions>
-						<execution>
-							<id>fmp</id>
-							<goals>
-								<goal>resource</goal>
-								<goal>build</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<generator>
-							<config>
-								<spring-boot>
-								</spring-boot>
-							</config>
-						</generator>
-					</configuration>
+				<version>${version.fabric8.plugin}</version>
+				<executions>
+					<execution>
+						<id>fmp</id>
+						<goals>
+							<goal>resource</goal>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<generator>
+						<config>
+							<spring-boot>
+							</spring-boot>
+						</config>
+					</generator>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
