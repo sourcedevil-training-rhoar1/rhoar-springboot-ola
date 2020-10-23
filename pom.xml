@@ -18,10 +18,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<fabric8.generator.from>fabric8/s2i-java</fabric8.generator.from>
+		<fabric8.generator.from>openshift/openjdk-8-rhel8:1.2</fabric8.generator.from>
 		<spring-boot.version>2.1.4.RELEASE-redhat-00001</spring-boot.version>
 		<spring-boot-maven-plugin.version>2.1.4.RELEASE-redhat-00001</spring-boot-maven-plugin.version>
-		<version.fabric8.plugin>3.1.80.redhat-000037</version.fabric8.plugin>
+		<version.fabric8.plugin>3.5.42.fuse-770010-redhat-00001</version.fabric8.plugin>
 	</properties>
 
 
